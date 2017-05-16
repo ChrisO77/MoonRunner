@@ -39,12 +39,21 @@ class NewRunViewController: UIViewController,MKMapViewDelegate,CLLocationManager
     var vertClimb = 0.0
     var vertDescent = 0.0
     var previousAlt = 0.0
-    var locationManager: CLLocationManager!
-    var upcomingBadge : Badge?
+    lazy var locationManager: CLLocationManager = {
+        var _locationManager = CLLocationManager()
+        _locationManager.delegate = self
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        _locationManager.activityType = .fitness
+        
+        // Movement threshold for new events
+        _locationManager.distanceFilter = 10.0
+        return _locationManager
+    }()
     
     lazy var locations = [CLLocation]()
     lazy var timer = Timer()
     var mapOverlay: MKTileOverlay!
+    var upcomingBadge : Badge?
     
     @IBOutlet weak var mapView2: MKMapView!
     @IBOutlet weak var promptLabel: UILabel!
@@ -175,7 +184,6 @@ class NewRunViewController: UIViewController,MKMapViewDelegate,CLLocationManager
     }
     func startLocationUpdates() {
         locationManager.startUpdatingLocation()
-        print("start location update")
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {

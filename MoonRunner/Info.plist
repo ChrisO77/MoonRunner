@@ -24,12 +24,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>MoonRunner wants to track your run</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
 	</array>
+	<key>UILaunchImageFile</key>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

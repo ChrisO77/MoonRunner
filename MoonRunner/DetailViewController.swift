@@ -126,20 +126,13 @@ class DetailViewController: UIViewController,MKMapViewDelegate {
     func loadMap() {
         if run.locations.count > 0 {
             mapView.isHidden = false
-            let template = "https://api.mapbox.com/styles/v1/spitfire4466/citl7jqwe00002hmwrvffpbzt/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3BpdGZpcmU0NDY2IiwiYSI6Im9jX0JHQUUifQ.2QarbK_LccnrvDg7FobGjA"
-            
-            mapOverlay = MKTileOverlay(urlTemplate: template)
-            mapOverlay.canReplaceMapContent = true
-            
-            mapView.add(mapOverlay,level: .aboveLabels)
             
             // Set the map bounds
             mapView.region = mapRegion()
             
             // Make the line(s!) on the map
-            let colorSegments = MulticolorPolylineSegment.colorSegments(forLocations: run.locations.array as! [Location])
-            mapView.addOverlays(colorSegments)
-        } else {
+            mapView.add(polyline())
+        }else {
             // No locations were found!
             mapView.isHidden = true;
             let alertController = UIAlertController(title: "Error", message: "Sorry this run has no locations saved",preferredStyle: .alert)
