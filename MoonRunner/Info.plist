@@ -22,8 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>MoonRunner would like to track your location</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
