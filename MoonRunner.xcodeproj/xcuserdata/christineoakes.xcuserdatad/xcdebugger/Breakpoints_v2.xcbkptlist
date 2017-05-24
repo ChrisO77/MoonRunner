@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoonRunner/NewRunViewController.swift"
-            timestampString = "515983535.427019"
+            timestampString = "517280103.206833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
-            landmarkName = "playSuccessSound()"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "mapView(_:rendererFor:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -72,12 +72,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoonRunner/NewRunViewController.swift"
-            timestampString = "515983535.427019"
+            timestampString = "517280103.206833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
-            landmarkName = "actionSheet(_:clickedButtonAt:)"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "checkNextBadge()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -93,7 +93,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
             endingLineNumber = "129"
-            landmarkName = "stopPressed(_:)"
+            landmarkName = "startPressed(_:)"
             landmarkType = "7">
             <Actions>
                <BreakpointActionProxy
@@ -117,7 +117,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
             endingLineNumber = "128"
-            landmarkName = "stopPressed(_:)"
+            landmarkName = "startPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -133,6 +133,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
+            landmarkName = "stopPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoonRunner/NewRunViewController.swift"
+            timestampString = "517280036.341902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "stopPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>

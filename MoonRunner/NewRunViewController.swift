@@ -135,16 +135,27 @@ class NewRunViewController: UIViewController,MKMapViewDelegate,CLLocationManager
     }
     
     @IBAction func stopPressed(_ sender: AnyObject) {
-        let actionSheet = UIAlertController.init(title: "Please choose a source type", message: nil, preferredStyle: .actionSheet)
-                actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (action) in
+        let actionSheet = UIAlertController.init(title: "Run Stopped", message: nil, preferredStyle: .actionSheet)
+                        actionSheet.addAction(UIAlertAction.init(title: "Save Run", style: UIAlertActionStyle.default, handler: { (action) in
+                            self.locationManager.stopUpdatingLocation()
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: "Discard Run", style: UIAlertActionStyle.destructive, handler: { (action) in
+            self.locationManager.stopUpdatingLocation()
+        }))
+
+        actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (action) in
             // self.dismissViewControllerAnimated(true, completion: nil) is not needed, this is handled automatically,
             //Plus whatever method you define here, gets called,
             //If you tap outside the UIAlertController action buttons area, then also this handler gets called.
+            self.locationManager.stopUpdatingLocation()
+            
         }))
+
         //Present the controller
         self.present(actionSheet, animated: true, completion: nil)
 
-        locationManager.stopUpdatingLocation()
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
