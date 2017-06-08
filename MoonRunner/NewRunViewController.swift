@@ -135,20 +135,22 @@ class NewRunViewController: UIViewController,MKMapViewDelegate,CLLocationManager
     }
     
     @IBAction func stopPressed(_ sender: AnyObject) {
+        self.locationManager.stopUpdatingLocation();
         let actionSheet = UIAlertController.init(title: "Run Stopped", message: nil, preferredStyle: .actionSheet)
                         actionSheet.addAction(UIAlertAction.init(title: "Save Run", style: UIAlertActionStyle.default, handler: { (action) in
-                            self.locationManager.stopUpdatingLocation()
+                            self.saveRun();
+                            self.performSegue(withIdentifier: DetailSegueName, sender: nil);
         }))
         actionSheet.addAction(UIAlertAction.init(title: "Discard Run", style: UIAlertActionStyle.destructive, handler: { (action) in
-            self.locationManager.stopUpdatingLocation()
+            self.navigationController?.popToRootViewController(animated: true)
+
         }))
 
         actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (action) in
             // self.dismissViewControllerAnimated(true, completion: nil) is not needed, this is handled automatically,
             //Plus whatever method you define here, gets called,
             //If you tap outside the UIAlertController action buttons area, then also this handler gets called.
-            self.locationManager.stopUpdatingLocation()
-            
+
         }))
 
         //Present the controller
@@ -304,7 +306,7 @@ class NewRunViewController: UIViewController,MKMapViewDelegate,CLLocationManager
 }
 
 // MARK: UIActionSheetDelegate
-extension NewRunViewController: UIActionSheetDelegate {
+/*:extension NewRunViewController: UIActionSheetDelegate {
     private func actionSheet(_ actionSheet: UIAlertController, clickedButtonAt buttonIndex: Int) {
         //save
         if buttonIndex == 1 {
@@ -316,4 +318,4 @@ extension NewRunViewController: UIActionSheetDelegate {
             navigationController?.popToRootViewController(animated: true)
         }
     }
-}
+} */
