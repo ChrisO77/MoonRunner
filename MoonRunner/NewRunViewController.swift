@@ -150,7 +150,7 @@ class NewRunViewController: UIViewController,MKMapViewDelegate,CLLocationManager
             // self.dismissViewControllerAnimated(true, completion: nil) is not needed, this is handled automatically,
             //Plus whatever method you define here, gets called,
             //If you tap outside the UIAlertController action buttons area, then also this handler gets called.
-
+                self.startLocationUpdates()
         }))
 
         //Present the controller
